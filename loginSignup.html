@@ -87,13 +87,21 @@ button {
 
 button {
     display: block;
-    margin: 0 auto;
+    margin: 2px auto;
     width: 260px;
     height: 36px;
     border-radius: 30px;
     color: black;
     font-size: 15px;
     cursor: pointer;
+}
+input[type="submit"]{
+    padding: 5px;
+    margin: 2px auto;
+    width: 260px;
+    height: 36px;
+    border-radius: 30px;
+    color: black;
 }
 
 .img {
@@ -382,18 +390,18 @@ input {
             <div class="cont">
                 <div class="form sign-in">
                     <h2>Welcome</h2>
+                    <form action="./php/login.php" method="post">
                     <label>
                         <span>Email</span>
-                        <input type="email" />
+                        <input type="email" name="email" />
                     </label>
                     <label>
                         <span>Password</span>
-                        <input type="password" />
+                        <input type="password" name="password" />
                     </label>
-                    <p class="forgot-pass">Forgot password?</p>
-                    <button type="button" class="submit">Sign In</button>
-        
+                    <input type="submit" class="submit" name="login" value="Sign In" style="margin-top: 1rem;">
                 </div>
+            </form>
                 <div class="sub-cont">
                     <div class="img">
                         <div class="img__text m--up">
@@ -409,32 +417,36 @@ input {
                             <span class="m--in">Sign In</span>
                         </div>
                     </div>
+                    <form action="./php/register.php" method="post" onsubmit="validateForm(event)">
                     <div class="form sign-up">
                         <h2>Create your Account</h2>
                         <label>
                             <span>Name</span>
-                            <input type="text" />
+                            <input type="text" name="name" />
+                            <p class="error-message" id="name-error" style="color:red; font-size: 10px;"></p>
                         </label>
                         <label>
                             <span>Email</span>
-                            <input type="email" />
+                            <input type="email" name="email" />
+                            <p class="error-message" id="email-error" style="color:red; font-size: 10px;"></p>
                         </label>
                         <label>
                             <span>Password</span>
-                            <input type="password" />
+                            <input type="password" name="password" />
+                            <p class="error-message" id="password-error" style="color:red; font-size: 10px;"></p>
                         </label>
                         <label>
                             <span>Login As?</span>
-                            <select name="" id="">
+                            <select name="type" id="type">
                                 <option value=""></option>
                                 <option value="vendor">vendor</option>
                                 <option value="customer">customer</option>
                             </select>
-        
+                            <p class="error-message" id="type-error" style="color:red; font-size: 10px;"></p>
                         </label>
-                        <button type="button" class="submit">Sign Up</button>
-        
+                        <input type="submit" class="submit" name="signup" value="Sign Up">
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -506,7 +518,7 @@ input {
     <script>
         document.querySelector('.img__btn').addEventListener('click', function () {
             document.querySelector('.cont').classList.toggle('s--signup');
-        });
+        }); 
     </script>
 
 </body>
@@ -520,5 +532,4 @@ input {
 <script src="assets/js/main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="./jquery-3.7.1.min.js"></script>
-
 </html>
