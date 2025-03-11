@@ -2,16 +2,15 @@
 
 include 'db_connect.php';
 include 'function.php';
+header('Content-Type: application/json');
 
-if(isset($_POST['login'])){
+if($_SERVER["REQUEST_METHOD"] === "POST"){
     $email = $_POST['email'];
     $password = $_POST['password'];
-    
     if(loginUser($email, $password)){
-        echo "<script>alert('Login successful');</script>";
-        header("location: ../index.html");
+        echo "true";
     }else{
-        echo "<script>alert('Login failed');</script>";
+        echo "false";
     }
 }
 ?>

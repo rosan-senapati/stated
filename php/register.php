@@ -2,18 +2,18 @@
 
 include 'db_connect.php';
 include 'function.php';
+header('Content-Type: application/json');
 
-if(isset($_POST['signup'])){
+if($_SERVER["REQUEST_METHOD"] === "POST"){
     $name = $_POST['name'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $type = $_POST['type'];
     
     if(registerUser($name, $password, $email, $type)){
-        echo "<script>alert('Registration successful');</script>";
-        header("location: ../loginSignup.html");
+        echo "true";
     }else{
-        echo "<script>alert('Registration failed');</script>";
+        echo "false";
     }
 }
         
