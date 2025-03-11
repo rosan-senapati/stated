@@ -72,7 +72,7 @@
                 </div>
                 <div class="login__form-container col-md-6 col-sm-12 d-flex justify-content-center align-items-center flex-column">
                         <p class="fs-4 fw-bold">LOGIN</p>
-                    <form action="" class="p-3">
+                    <form id="loginForm" class="p-3">
                         <div>
                             <input type="email" name="email" id="email" placeholder="Email">
                             <i class="bi bi-envelope-fill"></i>
@@ -81,6 +81,7 @@
                             <input type="password" name="password" id="password" placeholder="Password">
                             <i class="bi bi-lock-fill"></i>
                         </div>
+                        <p id="error-message" style="color: red; font-size: 14px; display: none; margin-left: 30px;"></p>
                         <div style="border: none; height: 3rem;" class=" d-flex justify-content-center ">
                             <input type="submit" name="login" id="login" value="LOGIN →" class="w-50" style="background-color: black; color: white; transition: all 0.3s ease-in-out; ">
                         </div>
@@ -155,5 +156,7 @@
     
       </footer>
 </body>
-<script src="../js/main.js"></script>
+<script src="../assets/vendor/jquery/jquery-3.7.1.min.js"></script>
+<script src="../js/loginForm.js"></script>
+<!-- <script src="../js/main.js"></script> -->
 </html>
