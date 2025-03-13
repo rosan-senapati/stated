@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="../css/main.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="./bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <script src="./bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script> -->
+    <style>
+        .profile-container {
+            position: relative;
+            width: 150px;
+            display: inline-block;
+        }
+
+        .profile-container img {
+            width: 100%;
+            height: 160px;
+            border-radius: 50%;
+        }
+
+        .edit-icon {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 6px;
+            height: 35px;
+            width: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 14px;
+            z-index: 10;
+        }
+
+        .edit-icon:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        #imageUpload {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header id="header" class="header d-flex align-items-center fixed-top">
+        <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+    
+          <a href="index.html" class="logo d-flex align-items-center">
+            <!-- Uncomment the line below if you also wish to use an image logo -->
+            <!-- <img src="assets/img/logo.png" alt=""> -->
+            <h1 class="sitename">Estate<span>Agency</span></h1>
+          </a>
+    
+          <nav id="navmenu" class="navmenu">
+            <ul>
+              <li><a href="index.html" class="active">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="properties.html">Properties</a></li>
+              <li><a href="agents.html">Agents</a></li>
+              <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Dropdown 1</a></li>
+                  <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                    <ul>
+                      <li><a href="#">Deep Dropdown 1</a></li>
+                      <li><a href="#">Deep Dropdown 2</a></li>
+                      <li><a href="#">Deep Dropdown 3</a></li>
+                      <li><a href="#">Deep Dropdown 4</a></li>
+                      <li><a href="#">Deep Dropdown 5</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">Dropdown 2</a></li>
+                  <li><a href="#">Dropdown 3</a></li>
+                  <li><a href="#">Dropdown 4</a></li>
+                </ul>
+              </li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="login.html">Login</a></li>
+            </ul>
+            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+          </nav>
+    
+        </div>
+      </header>
+
+
+
+<section style="background-color: #eee;">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col">
+              <nav aria-label="breadcrumb" class="bg-body-tertiary rounded-3 p-3 mb-4">
+                <ol class="breadcrumb mb-0">
+                  <li class="breadcrumb-item"><a href="#" class="text-decoration-none text-success fw-bold">Home</a></li>
+                  <li class="breadcrumb-item active fw-bold" aria-current="page">Profile</li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+        <div class="row">
+            <div class="col-lg-4 ">
+                <div class="card mb-4 pt-2">
+                    <div class="card-body text-center">
+                        <div class="profile-container">
+                            <img id="profileImage" src="../assets/img/default.jpg" alt="avatar">
+                            <label for="imageUpload" class="edit-icon">
+                                <i class="fas fa-pencil-alt"></i>
+                            </label>
+                        </div>
+                        <input type="file" id="imageUpload" accept="image/*">
+                        <h5 id="username" class="my-3">John Smith</h5>
+                        <p id="userType" class="text-muted mb-1">User</p>
+                        <button id="saveChanges" class="btn btn-outline-success mt-3 mb-3" disabled>Save Changes</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-8">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-3"><p class="mb-0">Full Name</p></div>
+                            <div class="col-sm-9"><p id="editName" class="editable mb-0">John Smith</p></div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3"><p class="mb-0">Email</p></div>
+                            <div class="col-sm-9"><p id="editEmail" class="non-editable mb-0">john@gmail.com</p></div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3"><p class="mb-0">Phone</p></div>
+                            <div class="col-sm-9"><p id="editPhone" class="editable mb-0">9996665554</p></div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3"><p class="mb-0">Alternate Mobile</p></div>
+                            <div class="col-sm-9"><p id="editAltPhone" class="editable mb-0">9998887772</p></div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3"><p class="mb-0">Address</p></div>
+                            <div class="col-sm-9"><p id="editAddress" class="editable mb-0">patiaa, Bhubaneswar</p></div>
+                        </div>
+                        <hr>
+                        <button id="editBtn" class="btn btn-success">Edit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row p-2 d-none" id="propertyCountRow">
+            <div class="col bg-body-tertiary rounded-3 p-3 mb-4">
+                <p class="fs-5 text-center">Property Listed</p>
+                <p class="fs-1 fw-bold text-center" id="propertyCount">
+                    5
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- footer -->
+    <footer id="footer" class="footer light-background">
+
+        <div class="container">
+          <div class="row gy-3">
+            <div class="col-lg-3 col-md-6 d-flex">
+              <i class="bi bi-geo-alt icon"></i>
+              <div class="address">
+                <h4>Address</h4>
+                <p>A108 Adam Street</p>
+                <p>New York, NY 535022</p>
+                <p></p>
+              </div>
+    
+            </div>
+    
+            <div class="col-lg-3 col-md-6 d-flex">
+              <i class="bi bi-telephone icon"></i>
+              <div>
+                <h4>Contact</h4>
+                <p>
+                  <strong>Phone:</strong> <span>+1 5589 55488 55</span><br>
+                  <strong>Email:</strong> <span>info@example.com</span><br>
+                </p>
+              </div>
+            </div>
+    
+            <div class="col-lg-3 col-md-6 d-flex">
+              <i class="bi bi-clock icon"></i>
+              <div>
+                <h4>Opening Hours</h4>
+                <p>
+                  <strong>Mon-Sat:</strong> <span>11AM - 23PM</span><br>
+                  <strong>Sunday</strong>: <span>Closed</span>
+                </p>
+              </div>
+            </div>
+    
+            <div class="col-lg-3 col-md-6">
+              <h4>Follow Us</h4>
+              <div class="social-links d-flex">
+                <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+    
+          </div>
+        </div>
+    
+        <div class="container copyright text-center mt-4">
+          <p>© <span>Copyright</span> <strong class="px-1 sitename">EstateAgency</strong> <span>All Rights Reserved</span></p>
+          <div class="credits">
+            <!-- All the links in the footer should remain intact. -->
+            <!-- You can delete the links only if you've purchased the pro version. -->
+            <!-- Licensing information: https://bootstrapmade.com/license/ -->
+            <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          </div>
+        </div>
+    
+      </footer>
+    
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+    <!-- Main JS File -->
+    <script src="../js/main.js"></script>
+    <script src="../assets/vendor/jquery/jquery-3.7.1.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let isEditing = false;
+        const editBtn = document.getElementById("editBtn");
+        const saveBtn = document.getElementById("saveChanges");
+        const editableFields = document.querySelectorAll(".editable");
+        const profileImage = document.getElementById("profileImage");
+        const imageUpload = document.getElementById("imageUpload");
+
+        // Fetch user data
+        fetch("profile.php")
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === "success") {
+                    document.getElementById("profileImage").src = data.user.profile_image || "default.jpg";
+                    document.getElementById("username").innerText = data.user.username;
+                    document.getElementById("userType").innerText = data.user.user_type;
+                    document.getElementById("editName").innerText = data.user.username;
+                    document.getElementById("editEmail").innerText = data.user.email;
+                    document.getElementById("editPhone").innerText = data.user.phone;
+                    document.getElementById("editAltPhone").innerText = data.user.alt_phone;
+                    document.getElementById("editAddress").innerText = data.user.address;
+
+                    // Show property count for vendors
+                    if (data.user.user_type === "vendor") {
+                        document.getElementById("propertyCount").innerText = data.user.property_count;
+                        document.getElementById("propertyCountRow").classList.remove("d-none");
+                    }
+                }
+            });
+
+        // Edit button toggle
+        editBtn.addEventListener("click", function() {
+            isEditing = !isEditing;
+            editableFields.forEach(field => {
+                field.contentEditable = isEditing;
+                field.style.borderBottom = isEditing ? "1px solid #ccc" : "none";
+            });
+            saveBtn.disabled = !isEditing;
+        });
+
+        // Image upload - No need for explicit click event on edit-icon
+        imageUpload.addEventListener("change", function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    profileImage.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    });
+
+    </script>
+
+</body>
+</html>
