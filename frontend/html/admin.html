@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="../css/main.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="./bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <script src="./bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script> -->
+</head>
+
+<body>
+    <header id="header" class="header d-flex align-items-center fixed-top">
+        <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+            <a href="index.html" class="logo d-flex align-items-center">
+                <!-- Uncomment the line below if you also wish to use an image logo -->
+                <!-- <img src="assets/img/logo.png" alt=""> -->
+                <h1 class="sitename">Estate<span>Agency</span></h1>
+            </a>
+
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="properties.html">Properties</a></li>
+                    <li><a href="agents.html">Agents</a></li>
+                    <li class="dropdown"><a href="#"><span>Dropdown</span> <i
+                                class="bi bi-chevron-down toggle-dropdown"></i></a>
+                        <ul>
+                            <li><a href="#">Dropdown 1</a></li>
+                            <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i
+                                        class="bi bi-chevron-down toggle-dropdown"></i></a>
+                                <ul>
+                                    <li><a href="#">Deep Dropdown 1</a></li>
+                                    <li><a href="#">Deep Dropdown 2</a></li>
+                                    <li><a href="#">Deep Dropdown 3</a></li>
+                                    <li><a href="#">Deep Dropdown 4</a></li>
+                                    <li><a href="#">Deep Dropdown 5</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Dropdown 2</a></li>
+                            <li><a href="#">Dropdown 3</a></li>
+                            <li><a href="#">Dropdown 4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html">Login</a></li>
+
+                </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <section class="bg-white">
+        <section class="hero-section text-light d-flex  py-5 align-items-center mb-5 "
+            style="background-color: #059652;">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 ">
+                        <h1 class="display-4 fw-bold mb-4 text-light">Welcome to Your Estate Agency Admin Dashboard</h1>
+                        <p class="lead mb-4">Manage Listings, Users, and Transactions with Ease!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="container py-5">
+            <!-- <div class="row mb-5">
+                <div class="col">
+                    <div class="text-center fs-1 fw-bold">Dashboard</div>
+                </div>
+            </div> -->
+            <div class="row g-5 pb-5">
+                <div class="col-lg-4 ">
+                    <div class="bg-primary rounded-5 shadow-lg p-3">
+                        <p class="text-center text-white fs-2 ">Total Property</p>
+                        <p class="text-center text-white fs-1 fw-bold ">50</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 ">
+                    <div class="bg-success rounded-5 shadow-lg p-3">
+                        <p class="text-center text-white fs-2 ">Total Vendors</p>
+                        <p class="text-center text-white fs-1 fw-bold ">10</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 ">
+                    <div class="bg-danger rounded-5 shadow-lg p-3">
+                        <p class="text-center text-white fs-2 ">Pending Approvals</p>
+                        <p class="text-center text-white fs-1 fw-bold ">5</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5 mb-5">
+                <div class="col">
+                    <div class="fs-3">Pending Request</div>
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div class="col">
+                    <div class="table-responsive" style="height: 290px;">
+                        <table class="table table-striped">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th scope="col">Sl No</th>
+                                    <th scope="col">Vender</th>
+                                    <th scope="col">Location</th>
+                                    <th scope="col" class="w-75">Description</th>
+                                    <th scope="col">Approval</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem veritatis vitae
+                                        ullam temporibus eveniet nobis libero provident nemo assumenda perferendis, et
+                                        possimus! Nihil ea modi esse eveniet placeat consequuntur, deserunt rerum ut, at
+                                        reiciendis, harum non quas atque et quibusdam! Fuga aut error voluptatibus
+                                        soluta officia sunt omnis, eligendi fugit?</td>
+                                    <td>
+                                        <div class="d-flex justify-content-evenly gap-1 flex-wrap">
+                                            <div class="btn btn-success"><i class="fa-solid fa-check"></i></div>
+                                            <div class="btn btn-danger"><i class="fa-solid fa-xmark"></i></div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem veritatis vitae
+                                        ullam temporibus eveniet nobis libero provident nemo assumenda perferendis, et
+                                        possimus! Nihil ea modi esse eveniet placeat consequuntur, deserunt rerum ut, at
+                                        reiciendis, harum non quas atque et quibusdam! Fuga aut error voluptatibus
+                                        soluta officia sunt omnis, eligendi fugit?</td>
+
+                                    <td>
+                                        <div class="d-flex justify-content-evenly gap-1 flex-wrap">
+                                            <div class="btn btn-success"><i class="fa-solid fa-check"></i></div>
+                                            <div class="btn btn-danger"><i class="fa-solid fa-xmark"></i></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem veritatis vitae
+                                        ullam temporibus eveniet nobis libero provident nemo assumenda perferendis, et
+                                        possimus! Nihil ea modi esse eveniet placeat consequuntur, deserunt rerum ut, at
+                                        reiciendis, harum non quas atque et quibusdam! Fuga aut error voluptatibus
+                                        soluta officia sunt omnis, eligendi fugit?</td>
+
+                                    <td>
+                                        <div class="d-flex justify-content-evenly gap-1 flex-wrap">
+                                            <div class="btn btn-success"><i class="fa-solid fa-check"></i></div>
+                                            <div class="btn btn-danger"><i class="fa-solid fa-xmark"></i></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <section id="real-estate" class="real-estate section pt-3">
+                <div class="row mt-5 mb-5">
+                    <div class="col">
+                        <div class="fs-3">All Properties</div>
+                    </div>
+                </div>
+
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="cards-wrapper row g-3 px-4">
+                                <div class="col-xl-4 col-md-6" >
+                                    <div class="card">
+                                        <img src="../assets/img/properties/property-1.jpg" alt="" class="img-fluid">
+                                        <div class="card-body">
+                                            <span class="sale-rent">Rent | $1200</span>
+                                            <h3><a href="property-single.html" class="stretched-link">204 Mount Olive Road
+                                                    Two</a></h3>
+                                            <div class="card-content d-flex flex-column justify-content-center text-center">
+                                                <div class="row propery-info">
+                                                    <div class="col">Area</div>
+                                                    <div class="col">Beds</div>
+                                                    <div class="col">Baths</div>
+                                                    <div class="col">Garages</div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">340m2</div>
+                                                    <div class="col">5</div>
+                                                    <div class="col">2</div>
+                                                    <div class="col">1</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- End Property Item -->
+                                <div class="col-xl-4 col-md-6" >
+                                    <div class="card">
+                                        <img src="../assets/img/properties/property-2.jpg" alt="" class="img-fluid">
+                                        <div class="card-body">
+                                            <span class="sale-rent">Rent | $1200</span>
+                                            <h3><a href="property-single.html" class="stretched-link">204 Mount Olive Road
+                                                    Two</a></h3>
+                                            <div class="card-content d-flex flex-column justify-content-center text-center">
+                                                <div class="row propery-info">
+                                                    <div class="col">Area</div>
+                                                    <div class="col">Beds</div>
+                                                    <div class="col">Baths</div>
+                                                    <div class="col">Garages</div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">340m2</div>
+                                                    <div class="col">5</div>
+                                                    <div class="col">2</div>
+                                                    <div class="col">1</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- End Property Item -->
+                                <div class="d-md-none d-lg-block col-xl-4 col-lg-6" >
+                                    <div class="card">
+                                        <img src="../assets/img/properties/property-1.jpg" alt="" class="img-fluid">
+                                        <div class="card-body">
+                                            <span class="sale-rent">Rent | $1200</span>
+                                            <h3><a href="property-single.html" class="stretched-link">204 Mount Olive Road
+                                                    Two</a></h3>
+                                            <div class="card-content d-flex flex-column justify-content-center text-center">
+                                                <div class="row propery-info">
+                                                    <div class="col">Area</div>
+                                                    <div class="col">Beds</div>
+                                                    <div class="col">Baths</div>
+                                                    <div class="col">Garages</div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">340m2</div>
+                                                    <div class="col">5</div>
+                                                    <div class="col">2</div>
+                                                    <div class="col">1</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- End Property Item -->
+    
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="cards-wrapper row g-3 px-4">
+                                <div class="col-xl-4 col-md-6" >
+                                    <div class="card">
+                                        <img src="../assets/img/properties/property-2.jpg" alt="" class="img-fluid">
+                                        <div class="card-body">
+                                            <span class="sale-rent">Rent | $1200</span>
+                                            <h3><a href="property-single.html" class="stretched-link">204 Mount Olive Road
+                                                    Two</a></h3>
+                                            <div class="card-content d-flex flex-column justify-content-center text-center">
+                                                <div class="row propery-info">
+                                                    <div class="col">Area</div>
+                                                    <div class="col">Beds</div>
+                                                    <div class="col">Baths</div>
+                                                    <div class="col">Garages</div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">340m2</div>
+                                                    <div class="col">5</div>
+                                                    <div class="col">2</div>
+                                                    <div class="col">1</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- End Property Item -->
+                                <div class="col-xl-4 col-md-6" >
+                                    <div class="card">
+                                        <img src="../assets/img/properties/property-2.jpg" alt="" class="img-fluid">
+                                        <div class="card-body">
+                                            <span class="sale-rent">Rent | $1200</span>
+                                            <h3><a href="property-single.html" class="stretched-link">204 Mount Olive Road
+                                                    Two</a></h3>
+                                            <div class="card-content d-flex flex-column justify-content-center text-center">
+                                                <div class="row propery-info">
+                                                    <div class="col">Area</div>
+                                                    <div class="col">Beds</div>
+                                                    <div class="col">Baths</div>
+                                                    <div class="col">Garages</div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">340m2</div>
+                                                    <div class="col">5</div>
+                                                    <div class="col">2</div>
+                                                    <div class="col">1</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- End Property Item -->
+                                <div class="d-none d-lg-block col-xl-4 col-md-6" >
+                                    <div class="card">
+                                        <img src="../assets/img/properties/property-2.jpg" alt="" class="img-fluid">
+                                        <div class="card-body">
+                                            <span class="sale-rent">Rent | $1200</span>
+                                            <h3><a href="property-single.html" class="stretched-link">204 Mount Olive Road
+                                                    Two</a></h3>
+                                            <div class="card-content d-flex flex-column justify-content-center text-center">
+                                                <div class="row propery-info">
+                                                    <div class="col">Area</div>
+                                                    <div class="col">Beds</div>
+                                                    <div class="col">Baths</div>
+                                                    <div class="col">Garages</div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">340m2</div>
+                                                    <div class="col">5</div>
+                                                    <div class="col">2</div>
+                                                    <div class="col">1</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- End Property Item -->
+    
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="row">
+
+                        <div class="col-2 btn btn-outline-success mx-auto">See All</div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </section>
+            <div class="row mt-5 mb-5">
+                <div class="col">
+                    <div class="fs-3">Review Feedback</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="table-responsive" style="height: 290px;">
+                        <table class="table align-middle mb-0 table-striped">
+                            <thead class="table-success">
+                                <tr>
+                                    <th>Name</th>
+                                    <th class="w-75">Feedback</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <img src="https://th.bing.com/th/id/OIP.PRyT3WbMgUpQFp8uD_qudQAAAA?rs=1&pid=ImgDetMain"
+                                                alt="" style="width: 45px; height: 45px" class="rounded-circle" />
+                                            <div class="ms-3">
+                                                <p class="fw-bold mb-1">John Doe</p>
+                                                <p class="text-muted mb-0">john.doe@gmail.com</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="fw-normal ">Software engineer IT department Lorem ipsum dolor sit amet
+                                            consectetur adipisicing elit. Ratione quidem dolorum quia nemo ut
+                                            asperiores? Veniam, praesentium cumque dolore minima voluptatum facilis
+                                            vitae ex quam sunt nulla soluta. Corporis, deleniti?</p>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <img src="https://th.bing.com/th/id/OIP.PRyT3WbMgUpQFp8uD_qudQAAAA?rs=1&pid=ImgDetMain"
+                                                alt="" style="width: 45px; height: 45px" class="rounded-circle" />
+                                            <div class="ms-3">
+                                                <p class="fw-bold mb-1">John Doe</p>
+                                                <p class="text-muted mb-0">john.doe@gmail.com</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="fw-normal ">Software engineer IT department Lorem ipsum dolor sit amet
+                                            consectetur adipisicing elit. Ratione quidem dolorum quia nemo ut
+                                            asperiores? Veniam, praesentium cumque dolore minima voluptatum facilis
+                                            vitae ex quam sunt nulla soluta. Corporis, deleniti?</p>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <img src="https://th.bing.com/th/id/OIP.PRyT3WbMgUpQFp8uD_qudQAAAA?rs=1&pid=ImgDetMain"
+                                                alt="" style="width: 45px; height: 45px" class="rounded-circle" />
+                                            <div class="ms-3">
+                                                <p class="fw-bold mb-1">John Doe</p>
+                                                <p class="text-muted mb-0">john.doe@gmail.com</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="fw-normal ">Software engineer IT department Lorem ipsum dolor sit amet
+                                            consectetur adipisicing elit. Ratione quidem dolorum quia nemo ut
+                                            asperiores? Veniam, praesentium cumque dolore minima voluptatum facilis
+                                            vitae ex quam sunt nulla soluta. Corporis, deleniti?</p>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <img src="https://th.bing.com/th/id/OIP.PRyT3WbMgUpQFp8uD_qudQAAAA?rs=1&pid=ImgDetMain"
+                                                alt="" style="width: 45px; height: 45px" class="rounded-circle" />
+                                            <div class="ms-3">
+                                                <p class="fw-bold mb-1">John Doe</p>
+                                                <p class="text-muted mb-0">john.doe@gmail.com</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="fw-normal ">Software engineer IT department Lorem ipsum dolor sit amet
+                                            consectetur adipisicing elit. Ratione quidem dolorum quia nemo ut
+                                            asperiores? Veniam, praesentium cumque dolore minima voluptatum facilis
+                                            vitae ex quam sunt nulla soluta. Corporis, deleniti?</p>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <img src="https://th.bing.com/th/id/OIP.PRyT3WbMgUpQFp8uD_qudQAAAA?rs=1&pid=ImgDetMain"
+                                                class="rounded-circle" alt="" style="width: 45px; height: 45px" />
+                                            <div class="ms-3">
+                                                <p class="fw-bold mb-1">Alex Ray</p>
+                                                <p class="text-muted mb-0">alex.ray@gmail.com</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="fw-normal ">Software engineer IT department Lorem ipsum dolor sit amet
+                                            consectetur adipisicing elit. Ratione quidem dolorum quia nemo ut
+                                            asperiores? Veniam, praesentium cumque dolore minima voluptatum facilis
+                                            vitae ex quam sunt nulla soluta. Corporis, deleniti?</p>
+
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <img src="https://th.bing.com/th/id/OIP.PRyT3WbMgUpQFp8uD_qudQAAAA?rs=1&pid=ImgDetMain"
+                                                class="rounded-circle" alt="" style="width: 45px; height: 45px" />
+                                            <div class="ms-3">
+                                                <p class="fw-bold mb-1">Kate Hunington</p>
+                                                <p class="text-muted mb-0">kate.hunington@gmail.com</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="fw-normal ">Software engineer IT department Lorem ipsum dolor sit amet
+                                            consectetur adipisicing elit. Ratione quidem dolorum quia nemo ut
+                                            asperiores? Veniam, praesentium cumque dolore minima voluptatum facilis
+                                            vitae ex quam sunt nulla soluta. Corporis, deleniti?</p>
+
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </section>
+
+
+
+    <!-- footer -->
+    <footer id="footer" class="footer light-background">
+
+        <div class="container">
+            <div class="row gy-3">
+                <div class="col-lg-3 col-md-6 d-flex">
+                    <i class="bi bi-geo-alt icon"></i>
+                    <div class="address">
+                        <h4>Address</h4>
+                        <p>A108 Adam Street</p>
+                        <p>New York, NY 535022</p>
+                        <p></p>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-3 col-md-6 d-flex">
+                    <i class="bi bi-telephone icon"></i>
+                    <div>
+                        <h4>Contact</h4>
+                        <p>
+                            <strong>Phone:</strong> <span>+1 5589 55488 55</span><br>
+                            <strong>Email:</strong> <span>info@example.com</span><br>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 d-flex">
+                    <i class="bi bi-clock icon"></i>
+                    <div>
+                        <h4>Opening Hours</h4>
+                        <p>
+                            <strong>Mon-Sat:</strong> <span>11AM - 23PM</span><br>
+                            <strong>Sunday</strong>: <span>Closed</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h4>Follow Us</h4>
+                    <div class="social-links d-flex">
+                        <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container copyright text-center mt-4">
+            <p>© <span>Copyright</span> <strong class="px-1 sitename">EstateAgency</strong> <span>All Rights
+                    Reserved</span></p>
+            <div class="credits">
+                <!-- All the links in the footer should remain intact. -->
+                <!-- You can delete the links only if you've purchased the pro version. -->
+                <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+        </div>
+
+    </footer>
+
+
+    <!-- Vendor JS Files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/vendor/php-email-form/validate.js"></script>
+    <script src="../assets/vendor/aos/aos.js"></script>
+    <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+    <!-- Main JS File -->
+    <script src="../js/main.js"></script>
+    <script src="../assets/vendor/jquery/jquery-3.7.1.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const tableBody = document.querySelector("table tbody");
+            if (!tableBody) return;
+
+            document.querySelectorAll(".btn-success, .btn-danger").forEach(button => {
+                button.removeEventListener("click", removeRow); // Prevent duplicate listeners
+                button.addEventListener("click", removeRow);
+            });
+
+            function removeRow() {
+                this.closest("tr").remove();
+                if (tableBody.children.length === 0) {
+                    const noDataRow = document.createElement("tr");
+                    noDataRow.innerHTML = `<td colspan="5" class="text-center fw-bold text-muted">No data available</td>`;
+                    tableBody.appendChild(noDataRow);
+                }
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>
