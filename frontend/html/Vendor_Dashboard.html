@@ -23,48 +23,44 @@
     <script src="./bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script> -->
 
     <style>
-        ::-webkit-scrollbar {
-  display: none; /* Hides the scrollbar */
-}
-        .card {
+
+        .card_v {
+            position: relative;
+            overflow: hidden;
             transition: all 0.3s ease;
+        }
 
-            &:hover {
-                cursor: pointer;
-                transform: scale(1.02);
-
-                .add__btn {
-                    display: block;
-                }
-            }
+        .card_v:hover {
+            cursor: pointer;
+            transform: scale(1.02);
         }
 
         .add__btn {
             background: rgba(255, 255, 255, 0.2);
-            /* Semi-transparent white */
             backdrop-filter: blur(5px);
-            /* Blur effect */
-            border-radius: 15px;
+
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             color: white;
-            display: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
 
             position: absolute;
-            top: 18%;
-            left: 24%;
+
+            top: 100px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 200px;
+
+
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
         }
 
-        @media screen and (max-width:1243px) {
-
-            .active__property-list{
-                width: 80% !important;
-
-            }
-
-            .cards-container {
-                height: 25% !important;
-                justify-content: center !important;
-            }
+        .card_v:hover .add__btn {
+            opacity: 0.8;
         }
     </style>
 </head>
@@ -86,23 +82,7 @@
               <li><a href="services.html">Services</a></li>
               <li><a href="properties.html">Properties</a></li>
               <li><a href="agents.html">Agents</a></li>
-              <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Dropdown 1</a></li>
-                  <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                    <ul>
-                      <li><a href="#">Deep Dropdown 1</a></li>
-                      <li><a href="#">Deep Dropdown 2</a></li>
-                      <li><a href="#">Deep Dropdown 3</a></li>
-                      <li><a href="#">Deep Dropdown 4</a></li>
-                      <li><a href="#">Deep Dropdown 5</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">Dropdown 2</a></li>
-                  <li><a href="#">Dropdown 3</a></li>
-                  <li><a href="#">Dropdown 4</a></li>
-                </ul>
-              </li>
+              
               <li><a href="contact.html">Contact</a></li>
               <li><a href="login.html">Login</a></li>
 
@@ -114,12 +94,15 @@
       </header>
 
     <!-- main section starts here  -->
+    <!-- main section starts here  -->
     <section>
-        <section class="hero-section text-light d-flex py-5 align-items-center mb-5 " style="background-color: #059652;">
+        <section class="hero-section text-light d-flex py-5 align-items-center mb-5 "
+            style="background-color: #059652;">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6 ">
-                        <h1 class="display-4 fw-bold mb-4 text-light">Welcome to Your Estate Agency Vender Dashboard</h1>
+                        <h1 class="display-4 fw-bold mb-4 text-light">Welcome to Your Estate Agency Vender Dashboard
+                        </h1>
                         <p class="lead mb-4">Manage Listings, Users, and Transactions with Ease!</p>
                     </div>
                 </div>
@@ -128,24 +111,24 @@
 
         <!-- summary card section starts here  -->
         <div class="container my-5">
-            <div class="row g-5">
+            <div class="row g-5 my-5">
 
                 <!-- Total Property  -->
-                <div class="col-lg-4 ">
+                <div class="col-lg-4 " data-aos="fade-up" data-aos-delay="100">
                     <div class="bg-primary rounded-5 shadow-lg p-3">
                         <p class="text-center text-white fs-2 ">Total Property</p>
                         <p class="text-center text-white fs-1 fw-bold ">50</p>
                     </div>
                 </div>
                 <!-- Active Property  -->
-                <div class="col-lg-4">
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="bg-success rounded-5 shadow-lg p-3">
                         <p class="text-center text-white fs-2 ">Active Property</p>
                         <p class="text-center text-white fs-1 fw-bold ">50</p>
                     </div>
                 </div>
                 <!-- Pending Property  -->
-                <div class="col-lg-4 ">
+                <div class="col-lg-4 " data-aos="fade-up" data-aos-delay="300">
                     <div class="bg-danger rounded-5 shadow-lg p-3">
                         <p class="text-center text-white fs-2 ">Pending Property</p>
                         <p class="text-center text-white fs-1 fw-bold ">50</p>
@@ -156,236 +139,226 @@
         <!-- summary card section ends here  -->
 
         <!-- Sub-main section starts here  -->
-        <div class="conatiner-fluid d-flex flex-wrap justify-content-center py-3">
-            <!-- Active Property List  starts here  -->
-            <div class="active__property-list w-50 m-4">
-                <h3 class="fw-semibold">Active Property Listings | Add & Manage Your Properties</h3>
-                <!-- cards container  -->
-                <div class="mt-4 pt-3 pb-4">
-                    <div class="d-flex justify-content-start flex-wrap cards-container " style=" max-height: 390px; overflow-y: auto; overflow-x: hidden;">
-                        <div class="card m-1 overflow-hidden">
-                            <div>
-                                <img src="../assets/img/img.jpg" alt="" style="height: 200px; width: 200px;">
+
+
+        <div class="container py-3">
+            <div class="row justify-content-center g-5 pt-4">
+                <!-- Active Property List -->
+                <div class="col-lg-6 col-md-10 col-sm-12 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="fw-semibold">Active Property Listings</h3>
+                    <div class="mt-4 pt-3 pb-4">
+                        <div class="row g-3 overflow-auto" style="max-height: 290px;">
+                            <div class="col-md-4 col-sm-12" >
+                                <div class="card_v">
+                                    <img src="../assets/img/img.jpg" class="card-img-top" alt="Property Image"
+                                        style="height: 200px; width: 100%;">
+                                    <div class="add__btn p-5">
+                                        <i class="bi bi-plus-square "></i>
+                                    </div>
+                                    <div class="card-body text-center ">
+                                        <p class="fs-5 fw-semibold text-success">ADD PROPERTY</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="add__btn p-5">
-                                <i class="bi bi-plus-square"></i>
+                            <div class="col-md-4 col-sm-12" >
+                                <div class="card_v">
+                                    <img src="../assets/img/img.jpg" class="card-img-top" alt="Property Image"
+                                        style="height: 200px; width: 100%;">
+                                    <div class="add__btn p-5">
+                                        <i class="bi bi-box-arrow-up-right"></i>
+                                    </div>
+                                    <div class="card-body text-center">
+                                        <p class="fs-5 fw-semibold">Roys Property, Bhubaneswar</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="my-2 px-2 pt-3">
-                                <p class="text-center text-success fs-6 fw-semibold">ADD PROPERTY</p>
+                            <div class="col-md-4 col-sm-12" >
+                                <div class="card_v">
+                                    <img src="../assets/img/img.jpg" class="card-img-top" alt="Property Image"
+                                        style="height: 200px; width: 100%;">
+                                    <div class="add__btn p-5">
+                                        <i class="bi bi-box-arrow-up-right"></i>
+                                    </div>
+                                    <div class="card-body text-center">
+                                        <p class="fs-5 fw-semibold">Roys Property, Bhubaneswar</p>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="card m-1 overflow-hidden">
-                            <div>
-                                <img src="../assets/img/img.jpg" alt="" style="height: 200px; width: 200px;">
+                            <div class="col-md-4 col-sm-12" >
+                                <div class="card_v">
+                                    <img src="../assets/img/img.jpg" class="card-img-top" alt="Property Image"
+                                        style="height: 200px; width: 100%;">
+                                    <div class="add__btn p-5">
+                                        <i class="bi bi-box-arrow-up-right"></i>
+                                    </div>
+                                    <div class="card-body text-center">
+                                        <p class="fs-5 fw-semibold">Roys Property, Bhubaneswar</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="add__btn p-5">
-                                <i class="bi bi-plus-square"></i>
-                            </div>
-                            <div class="my-2 px-2 pt-3">
-                                <p class="text-center text-success fw-semibold">ADD PROPERTY</p>
-                            </div>
-                        </div>
-                        <div class="card m-1 overflow-hidden">
-                            <div>
-                                <img src="../assets/img/img.jpg" alt="" style="height: 200px; width: 200px;">
-                            </div>
-                            <div class="add__btn p-5">
-                                <i class="bi bi-plus-square"></i>
-                            </div>
-                            <div class="my-2 px-2 pt-3">
-                                <p class="text-center text-success fw-semibold">ADD PROPERTY</p>
-                            </div>
-                        </div>
-                        <div class="card m-1 overflow-hidden">
-                            <div>
-                                <img src="../assets/img/img.jpg" alt="" style="height: 200px; width: 200px;">
-                            </div>
-                            <div class="add__btn p-5">
-                                <i class="bi bi-plus-square"></i>
-                            </div>
-                            <div class="my-2 px-2 pt-3">
-                                <p class="text-center text-success fw-semibold">ADD PROPERTY</p>
-                            </div>
-                        </div>
-                        <div class="card m-1 overflow-hidden">
-                            <div>
-                                <img src="../assets/img/img.jpg" alt="" style="height: 200px; width: 200px;">
-                            </div>
-                            <div class="add__btn p-5">
-                                <i class="bi bi-plus-square"></i>
-                            </div>
-                            <div class="my-2 px-2 pt-3">
-                                <p class="text-center text-success fw-semibold">ADD PROPERTY</p>
-                            </div>
-                        </div>
-                        <div class="card m-1 overflow-hidden">
-                            <div>
-                                <img src="../assets/img/img.jpg" alt="" style="height: 200px; width: 200px;">
-                            </div>
-                            <div class="add__btn p-5">
-                                <i class="bi bi-plus-square"></i>
-                            </div>
-                            <div class="my-2 px-2 pt-3">
-                                <p class="text-center text-success fw-semibold">ADD PROPERTY</p>
+                            <div class="col-md-4 col-sm-12" >
+                                <div class="card_v">
+                                    <img src="../assets/img/img.jpg" class="card-img-top" alt="Property Image"
+                                        style="height: 200px; width: 100%;">
+                                    <div class="add__btn p-5">
+                                        <i class="bi bi-box-arrow-up-right"></i>
+                                    </div>
+                                    <div class="card-body text-center">
+                                        <p class="fs-5 fw-semibold">Roys Property, Bhubaneswar</p>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                        
                     </div>
                 </div>
-            </div>
-            <!-- Active Property List ends Here  -->
 
-            <!-- Rejected Property List Starts here  -->
-            <div>
-                <div class="container-fluid p-3 my-2">
-                    <h3 class="fw-semibold">Rejected Properties: Review & Update Listings</h3>
-                    <div class="mt-4 pt-3">
-                        <div class="table-responsive" style="height: 390px;">
-                            <table class="table table-striped">
-                                <thead class="table-dark">
-                                    <tr>
-                                        <th scope="col">Sl No</th>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td class="text-wrap">Roys Property, Bhubaneswar</td>
-                                        <td><button href="" class="btn btn-danger">Re-apply</button></td>
-                                    </tr>
-
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td class="text-wrap">Roys Property, Bhubaneswar</td>
-                                        <td><button href="" class="btn btn-danger">Re-apply</button></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td class="text-wrap">Roys Property, Bhubaneswar</td>
-                                        <td><button href="" class="btn btn-danger">Re-apply</button></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td class="text-wrap">Roys Property, Bhubaneswar</td>
-                                        <td><button href="" class="btn btn-danger">Re-apply</button></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td class="text-wrap">Roys Property, Bhubaneswar</td>
-                                        <td><button href="" class="btn btn-danger">Re-apply</button></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td class="text-wrap">Roys Property, Bhubaneswar</td>
-                                        <td><button href="" class="btn btn-danger">Re-apply</button></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td class="text-wrap">Roys Property, Bhubaneswar</td>
-                                        <td><button href="" class="btn btn-danger">Re-apply</button></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td class="text-wrap">Roys Property, Bhubaneswar</td>
-                                        <td><button href="" class="btn btn-danger">Re-apply</button></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td class="text-wrap">Roys Property, Bhubaneswar</td>
-                                        <td><button href="" class="btn btn-danger">Re-apply</button></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td class="text-wrap">Roys Property, Bhubaneswar</td>
-                                        <td><button href="" class="btn btn-danger">Re-apply</button></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td class="text-wrap">Roys Property, Bhubaneswar</td>
-                                        <td><button href="" class="btn btn-danger">Re-apply</button></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                <!-- Rejected Property List -->
+                <div class="col-lg-6 col-md-10 col-sm-12" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="fw-semibold ">Rejected Properties</h3>
+                    <div class="table-responsive mt-4 pt-3 pb-4" style="max-height: 290px; overflow-y: auto;">
+                        <table class="table table-striped" >
+                            <thead class="table-dark">
+                                <tr>
+                                    <th scope="col">Sl No</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td class="text-wrap">Roys Property, Bhubaneswar</td>
+                                    <td><button class="btn btn-danger">Re-apply</button></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td class="text-wrap">Roys Property, Bhubaneswar</td>
+                                    <td><button class="btn btn-danger">Re-apply</button></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td class="text-wrap">Roys Property, Bhubaneswar</td>
+                                    <td><button class="btn btn-danger">Re-apply</button></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td class="text-wrap">Roys Property, Bhubaneswar</td>
+                                    <td><button class="btn btn-danger">Re-apply</button></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td class="text-wrap">Roys Property, Bhubaneswar</td>
+                                    <td><button class="btn btn-danger">Re-apply</button></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td class="text-wrap">Roys Property, Bhubaneswar</td>
+                                    <td><button class="btn btn-danger">Re-apply</button></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td class="text-wrap">Roys Property, Bhubaneswar</td>
+                                    <td><button class="btn btn-danger">Re-apply</button></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td class="text-wrap">Roys Property, Bhubaneswar</td>
+                                    <td><button class="btn btn-danger">Re-apply</button></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td class="text-wrap">Roys Property, Bhubaneswar</td>
+                                    <td><button class="btn btn-danger">Re-apply</button></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td class="text-wrap">Roys Property, Bhubaneswar</td>
+                                    <td><button class="btn btn-danger">Re-apply</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
+
         <!-- Pending Property List ends here  -->
 
-        </div>
-        <!-- sub-main section ends here -->
+    </div>
+    <!-- sub-main section ends here -->
     </section>
     <!-- main section ends here  -->
-     <!-- footer -->
-     <footer id="footer" class="footer light-background">
+    <!-- footer -->
+    <footer id="footer" class="footer light-background">
 
         <div class="container">
-          <div class="row gy-3">
-            <div class="col-lg-3 col-md-6 d-flex">
-              <i class="bi bi-geo-alt icon"></i>
-              <div class="address">
-                <h4>Address</h4>
-                <p>A108 Adam Street</p>
-                <p>New York, NY 535022</p>
-                <p></p>
-              </div>
-    
-            </div>
-    
-            <div class="col-lg-3 col-md-6 d-flex">
-              <i class="bi bi-telephone icon"></i>
-              <div>
-                <h4>Contact</h4>
-                <p>
-                  <strong>Phone:</strong> <span>+1 5589 55488 55</span><br>
-                  <strong>Email:</strong> <span>info@example.com</span><br>
-                </p>
-              </div>
-            </div>
-    
-            <div class="col-lg-3 col-md-6 d-flex">
-              <i class="bi bi-clock icon"></i>
-              <div>
-                <h4>Opening Hours</h4>
-                <p>
-                  <strong>Mon-Sat:</strong> <span>11AM - 23PM</span><br>
-                  <strong>Sunday</strong>: <span>Closed</span>
-                </p>
-              </div>
-            </div>
-    
-            <div class="col-lg-3 col-md-6">
-              <h4>Follow Us</h4>
-              <div class="social-links d-flex">
-                <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-    
-          </div>
-        </div>
-    
-        <div class="container copyright text-center mt-4">
-          <p>© <span>Copyright</span> <strong class="px-1 sitename">EstateAgency</strong> <span>All Rights Reserved</span></p>
-          <div class="credits">
-            <!-- All the links in the footer should remain intact. -->
-            <!-- You can delete the links only if you've purchased the pro version. -->
-            <!-- Licensing information: https://bootstrapmade.com/license/ -->
-            <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-          </div>
-        </div>
-    
-      </footer>
-      <!-- Scroll Top -->
-    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+            <div class="row gy-3">
+                <div class="col-lg-3 col-md-6 d-flex">
+                    <i class="bi bi-geo-alt icon"></i>
+                    <div class="address">
+                        <h4>Address</h4>
+                        <p>A108 Adam Street</p>
+                        <p>New York, NY 535022</p>
+                        <p></p>
+                    </div>
 
-    
+                </div>
+
+                <div class="col-lg-3 col-md-6 d-flex">
+                    <i class="bi bi-telephone icon"></i>
+                    <div>
+                        <h4>Contact</h4>
+                        <p>
+                            <strong>Phone:</strong> <span>+1 5589 55488 55</span><br>
+                            <strong>Email:</strong> <span>info@example.com</span><br>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 d-flex">
+                    <i class="bi bi-clock icon"></i>
+                    <div>
+                        <h4>Opening Hours</h4>
+                        <p>
+                            <strong>Mon-Sat:</strong> <span>11AM - 23PM</span><br>
+                            <strong>Sunday</strong>: <span>Closed</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h4>Follow Us</h4>
+                    <div class="social-links d-flex">
+                        <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container copyright text-center mt-4">
+            <p>© <span>Copyright</span> <strong class="px-1 sitename">EstateAgency</strong> <span>All Rights
+                    Reserved</span></p>
+            <div class="credits">
+                <!-- All the links in the footer should remain intact. -->
+                <!-- You can delete the links only if you've purchased the pro version. -->
+                <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+        </div>
+
+    </footer>
+
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
 
     <!-- Vendor JS Files -->
     <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

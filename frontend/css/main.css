@@ -1721,3 +1721,45 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+.form-control:focus {
+  border-color: var(--nav-dropdown-hover-color); /* Change this to your desired color */
+  box-shadow: 0 0 0 0.2rem #defae3;
+}
+
+.card_v {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card_v:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+}
+
+.add__btn {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 200px;
+
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.card_v:hover .add__btn {
+  opacity: 0.8;
+}
